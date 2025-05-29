@@ -1,4 +1,4 @@
-# Density Ratio Estimation with Conditional Probability Paths
+# [ICML 2025] Density Ratio Estimation with Conditional Probability Paths
 
 This repository implements a method to estimate a density-ratio. It is largely based on https://github.com/ermongroup/dre-infinity/. We have cleaned up the code a bit. GPT was used to support coding.
 
