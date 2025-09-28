@@ -1,0 +1,249 @@
+data:
+  centered: false
+  dataset: Gaussians
+  dim: 2
+  eps1: 0.0
+  eps2: 1.0e-05
+  image_size: 28
+  k: 1.0
+  num_channels: 1
+  random_flip: false
+  uniform_dequantization: false
+device: !!python/object/apply:torch.device
+- cpu
+eval:
+  atol: 1.0e-06
+  batch_size: 64
+  begin_ckpt: 9
+  bpd_dataset: test
+  enable_bpd: false
+  enable_loss: true
+  enable_sampling: false
+  end_ckpt: 26
+  num_samples: 50000
+  rtol: 1.0e-06
+model:
+  ema: false
+  name: toy_time_scorenet
+  nf: 64
+  param: false
+  type: time
+  z_dim: 256
+optim:
+  amsgrad: false
+  beta1: 0.9
+  eps: 1.0e-08
+  grad_clip: -1.0
+  lr: 0.002
+  optimizer: Adam
+  scheduler: true
+  warmup: 0
+  weight_decay: 0.0
+sampling:
+  n_steps_each: 1
+  noise_removal: false
+  probability_flow: false
+  snr: 0.16
+seed: 1
+training:
+  algo: ssm
+  batch_size: 256
+  conditional: false
+  continuous: true
+  dsm: false
+  eval_freq: 1000
+  full: false
+  joint: false
+  likelihood_weighting: false
+  log_freq: 100
+  n_iters: 20000
+  plot_scatter: false
+  prob_path: OneVP
+  ratio_freq: 1000
+  reduce_mean: false
+  reweight: path_var
+  snapshot_freq: 1000
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  unit_factor: true
+using supplied model name toy_time_scorenet
+W0812 03:37:23.075332 8470732992 utils.py:11] No checkpoint found at ../results/gaussians_inits/gaussians_2_mlp_time_path_var_unit/256_0.002_256/checkpoints-meta/checkpoint.pth. Returned the same state as input
+/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+I0812 03:37:23.076989 8470732992 toy_run_lib.py:161] Starting training loop at step 0.
+I0812 03:37:23.100058 8470732992 toy_run_lib.py:224] step: 0, training_loss: -0.1280
+I0812 03:37:23.785490 8470732992 toy_run_lib.py:224] step: 100, training_loss: -13.2321
+I0812 03:37:24.395183 8470732992 toy_run_lib.py:224] step: 200, training_loss: -20.4982
+I0812 03:37:24.987144 8470732992 toy_run_lib.py:224] step: 300, training_loss: -20.8399
+I0812 03:37:25.605539 8470732992 toy_run_lib.py:224] step: 400, training_loss: -23.7823
+I0812 03:37:26.242653 8470732992 toy_run_lib.py:224] step: 500, training_loss: -18.9968
+I0812 03:37:26.837594 8470732992 toy_run_lib.py:224] step: 600, training_loss: -18.5328
+I0812 03:37:27.514394 8470732992 toy_run_lib.py:224] step: 700, training_loss: -24.3095
+I0812 03:37:28.157037 8470732992 toy_run_lib.py:224] step: 800, training_loss: -23.1416
+I0812 03:37:28.798225 8470732992 toy_run_lib.py:224] step: 900, training_loss: -22.9521
+I0812 03:37:29.406287 8470732992 toy_run_lib.py:224] step: 1000, training_loss: -18.8625
+-----
+val set
+ratio computation took 92 function evaluations.
+true log ratios: -36.442135 36.25486
+est. log ratios: -31.59665594414585 23.833279733261243
+MSE on val set: 9.25088186888328
+-----
+-----
+ratio computation took 92 function evaluations.
+true log ratios: -37.387238 37.095512
+est. log ratios: -32.37884033748828 24.164503077612856
+MSE error: 9.437200010225858
+-----
+I0812 03:37:37.065318 8470732992 toy_run_lib.py:224] step: 1100, training_loss: -22.1207
+I0812 03:37:37.648041 8470732992 toy_run_lib.py:224] step: 1200, training_loss: -27.1019
+I0812 03:37:38.289983 8470732992 toy_run_lib.py:224] step: 1300, training_loss: -21.4322
+I0812 03:37:38.856925 8470732992 toy_run_lib.py:224] step: 1400, training_loss: -21.7473
+I0812 03:37:39.408350 8470732992 toy_run_lib.py:224] step: 1500, training_loss: -21.5947
+I0812 03:37:39.995413 8470732992 toy_run_lib.py:224] step: 1600, training_loss: -15.9748
+I0812 03:37:40.653818 8470732992 toy_run_lib.py:224] step: 1700, training_loss: -25.0383
+I0812 03:37:41.228407 8470732992 toy_run_lib.py:224] step: 1800, training_loss: -17.3481
+I0812 03:37:41.777641 8470732992 toy_run_lib.py:224] step: 1900, training_loss: -18.3301
+I0812 03:37:42.356864 8470732992 toy_run_lib.py:224] step: 2000, training_loss: -17.6817
+-----
+val set
+ratio computation took 110 function evaluations.
+true log ratios: -36.442135 36.25486
+est. log ratios: -31.20430654120333 25.718957716202056
+MSE on val set: 7.218330187668298
+-----
+-----
+ratio computation took 110 function evaluations.
+true log ratios: -38.419327 35.125664
+est. log ratios: -32.65820141156187 25.23433169637588
+MSE error: 7.342944377258264
+-----
+I0812 03:37:57.850195 8470732992 toy_run_lib.py:224] step: 2100, training_loss: -19.6137
+I0812 03:37:58.469218 8470732992 toy_run_lib.py:224] step: 2200, training_loss: -20.4222
+I0812 03:37:58.991221 8470732992 toy_run_lib.py:224] step: 2300, training_loss: -23.1848
+I0812 03:37:59.520763 8470732992 toy_run_lib.py:224] step: 2400, training_loss: -18.7164
+I0812 03:38:00.067532 8470732992 toy_run_lib.py:224] step: 2500, training_loss: -26.1253
+I0812 03:38:00.647357 8470732992 toy_run_lib.py:224] step: 2600, training_loss: -20.7917
+I0812 03:38:01.190541 8470732992 toy_run_lib.py:224] step: 2700, training_loss: -18.6171
+I0812 03:38:01.745640 8470732992 toy_run_lib.py:224] step: 2800, training_loss: -22.0023
+I0812 03:38:02.289494 8470732992 toy_run_lib.py:224] step: 2900, training_loss: -19.7486
+I0812 03:38:02.897480 8470732992 toy_run_lib.py:224] step: 3000, training_loss: -19.6630
+-----
+val set
+ratio computation took 122 function evaluations.
+true log ratios: -36.442135 36.25486
+est. log ratios: -27.303977587794517 35.476088584943454
+MSE on val set: 4.25354187098092
+-----
+-----
+I0812 03:38:20.873070 8470732992 toy_run_lib.py:224] step: 3100, training_loss: -20.8294
+ratio computation took 122 function evaluations.
+true log ratios: -38.059433 35.07194
+est. log ratios: -28.784622601895393 34.328887097874464
+MSE error: 4.147523538175805
+-----
+I0812 03:38:21.415002 8470732992 toy_run_lib.py:224] step: 3200, training_loss: -24.2739
+I0812 03:38:21.975479 8470732992 toy_run_lib.py:224] step: 3300, training_loss: -19.7705
+I0812 03:38:22.574860 8470732992 toy_run_lib.py:224] step: 3400, training_loss: -23.8207
+I0812 03:38:23.149682 8470732992 toy_run_lib.py:224] step: 3500, training_loss: -22.7685
+I0812 03:38:23.699823 8470732992 toy_run_lib.py:224] step: 3600, training_loss: -25.0886
+I0812 03:38:24.231721 8470732992 toy_run_lib.py:224] step: 3700, training_loss: -21.3165
+I0812 03:38:24.795291 8470732992 toy_run_lib.py:224] step: 3800, training_loss: -21.2683
+I0812 03:38:25.422810 8470732992 toy_run_lib.py:224] step: 3900, training_loss: -20.4453
+I0812 03:38:25.975903 8470732992 toy_run_lib.py:224] step: 4000, training_loss: -17.2920
+-----
+val set
+ratio computation took 146 function evaluations.
+true log ratios: -36.442135 36.25486
+est. log ratios: -32.481677803349385 29.61487765806096
+MSE on val set: 5.379292241613357
+-----
+-----
+I0812 03:38:42.479955 8470732992 toy_run_lib.py:224] step: 4100, training_loss: -22.3910
+I0812 03:38:43.065573 8470732992 toy_run_lib.py:224] step: 4200, training_loss: -20.0204
+ratio computation took 146 function evaluations.
+true log ratios: -41.069397 35.390495
+est. log ratios: -37.21166486775857 29.052447557412385
+MSE error: 5.437228263012777
+-----
+I0812 03:38:43.613138 8470732992 toy_run_lib.py:224] step: 4300, training_loss: -20.5362
+I0812 03:38:44.168336 8470732992 toy_run_lib.py:224] step: 4400, training_loss: -22.0648
+I0812 03:38:44.713989 8470732992 toy_run_lib.py:224] step: 4500, training_loss: -17.9659
+I0812 03:38:45.326045 8470732992 toy_run_lib.py:224] step: 4600, training_loss: -21.3170
+I0812 03:38:45.867173 8470732992 toy_run_lib.py:224] step: 4700, training_loss: -21.3550
+I0812 03:38:46.423781 8470732992 toy_run_lib.py:224] step: 4800, training_loss: -21.3421
+I0812 03:38:46.986896 8470732992 toy_run_lib.py:224] step: 4900, training_loss: -22.6857
+I0812 03:38:47.604446 8470732992 toy_run_lib.py:224] step: 5000, training_loss: -22.4416
+-----
+val set
+ratio computation took 146 function evaluations.
+true log ratios: -36.442135 36.25486
+est. log ratios: -33.53816083527493 32.92609607345531
+MSE on val set: 0.6474491872606218
+-----
+-----
+ratio computation took 146 function evaluations.
+true log ratios: -39.544853 36.411957
+est. log ratios: -35.89464994515951 32.835173028402735
+MSE error: 0.6477684170712742
+-----
+I0812 03:39:09.700184 8470732992 toy_run_lib.py:224] step: 5100, training_loss: -17.9170
+I0812 03:39:10.314809 8470732992 toy_run_lib.py:224] step: 5200, training_loss: -21.9629
+I0812 03:39:10.865984 8470732992 toy_run_lib.py:224] step: 5300, training_loss: -23.1963
+I0812 03:39:11.410021 8470732992 toy_run_lib.py:224] step: 5400, training_loss: -20.0610
+I0812 03:39:11.954890 8470732992 toy_run_lib.py:224] step: 5500, training_loss: -21.0754
+I0812 03:39:12.596204 8470732992 toy_run_lib.py:224] step: 5600, training_loss: -20.5870
+I0812 03:39:13.361757 8470732992 toy_run_lib.py:224] step: 5700, training_loss: -23.4629
+I0812 03:39:13.974847 8470732992 toy_run_lib.py:224] step: 5800, training_loss: -21.7900
+I0812 03:39:14.629127 8470732992 toy_run_lib.py:224] step: 5900, training_loss: -19.3474
+-----
+val set
+I0812 03:39:15.196979 8470732992 toy_run_lib.py:224] step: 6000, training_loss: -23.5230
+Traceback (most recent call last):
+  File "/Users/jiny/Desktop/test/dre-prob-paths/main.py", line 127, in <module>
+    app.run(main)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/absl/app.py", line 308, in run
+    _run_main(main, args)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/absl/app.py", line 254, in _run_main
+    sys.exit(main(argv))
+  File "/Users/jiny/Desktop/test/dre-prob-paths/main.py", line 104, in main
+    toy_run_lib.train(FLAGS.config, FLAGS.workdir)
+  File "/Users/jiny/Desktop/test/dre-prob-paths/toy_run_lib.py", line 230, in train
+    val_mse_error = val_evaluate_fn(score_model)
+  File "/Users/jiny/Desktop/test/dre-prob-paths/toy_run_lib.py", line 345, in val_evaluate
+    est_logr, _ = density_ratio_fn(
+  File "/Users/jiny/Desktop/test/dre-prob-paths/density_ratios.py", line 35, in ratio_fn
+    solution = integrate.solve_ivp(
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/scipy/integrate/_ivp/ivp.py", line 655, in solve_ivp
+    message = solver.step()
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/scipy/integrate/_ivp/base.py", line 197, in step
+    success, message = self._step_impl()
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/scipy/integrate/_ivp/rk.py", line 144, in _step_impl
+    y_new, f_new = rk_step(self.fun, t, y, self.f, h, self.A,
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/scipy/integrate/_ivp/rk.py", line 67, in rk_step
+    f_new = fun(t + h, y_new)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/scipy/integrate/_ivp/base.py", line 154, in fun
+    return self.fun_single(t, y)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/scipy/integrate/_ivp/base.py", line 23, in fun_wrapped
+    return np.asarray(fun(t, y), dtype=dtype)
+  File "/Users/jiny/Desktop/test/dre-prob-paths/density_ratios.py", line 27, in ode_func
+    rx = score_model(x, t)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/jiny/Desktop/test/dre-prob-paths/models/toy_networks.py", line 131, in forward
+    h = self.net(xt)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/opt/anaconda3/envs/dre-tox/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

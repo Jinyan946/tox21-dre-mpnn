@@ -48,11 +48,11 @@ def main(argv):
     if FLAGS.mode == "eval":
         mode = "disabled"
     # TODO: set up wandb and replace names here
-    api_key = os.getenv("WANDB_API_KEY")
-    wandb.login(key=api_key)
+    #api_key = os.getenv("WANDB_API_KEY")
+    #wandb.login(key=api_key)
     wandb.init(
         project=FLAGS.project,
-        entity=TODO,
+        #entity=TODO,
         name=FLAGS.doc,
         mode=mode,
     )

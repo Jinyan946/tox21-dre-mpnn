@@ -23,7 +23,16 @@ import time
 import copy
 
 import numpy as np
-import tensorflow as tf
+#import tensorflow as tf
+# --- at the very top of run_lib.py (before any tf use) ---
+try:
+    import tensorflow as tf  # type: ignore
+    import tensorflow_probability as tfp  # type: ignore
+    TF_AVAILABLE = True
+except Exception:
+    TF_AVAILABLE = False
+# ----------------------------------------------------------
+
 import tensorflow_gan as tfgan
 import logging
 

@@ -1,0 +1,64 @@
+{
+    "os": "macOS-15.6-arm64-arm-64bit",
+    "python": "3.10.15",
+    "heartbeatAt": "2025-08-12T07:36:53.213646",
+    "startedAt": "2025-08-12T07:36:52.018122",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--toy",
+        "--project=gaussians",
+        "--config",
+        "configs/gaussians/time/mlp.py",
+        "--mode=train",
+        "--doc=gaussians_2_mlp_time_path_var_unit_256_0.002_256",
+        "--workdir=../results/gaussians_inits/gaussians_2_mlp_time_path_var_unit/256_0.002_256/",
+        "--config.seed=1",
+        "--config.training.batch_size=256",
+        "--config.optim.lr=0.002",
+        "--config.model.z_dim=256",
+        "--config.training.reweight=path_var",
+        "--config.data.dim=2",
+        "--config.training.unit_factor=True"
+    ],
+    "state": "running",
+    "program": "/Users/jiny/Desktop/test/dre-prob-paths/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/ksnxr/dre-prob-paths.git",
+        "commit": "4016da92087b72f2153b1535132cc7398e18c1f5"
+    },
+    "email": null,
+    "root": "/Users/jiny/Desktop/test/dre-prob-paths",
+    "host": "Jins-MacBook-Pro-2.local",
+    "username": "jiny",
+    "executable": "/opt/anaconda3/envs/dre-tox/bin/python3",
+    "cpu_count": 11,
+    "cpu_count_logical": 11,
+    "cpu_freq": {
+        "current": 4056,
+        "min": 696,
+        "max": 4056
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4056,
+            "min": 696,
+            "max": 4056
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 10.490650177001953
+        }
+    },
+    "gpuapple": {
+        "type": "Apple M3 Pro",
+        "vendor": "sppci_vendor_Apple"
+    },
+    "memory": {
+        "total": 18.0
+    }
+}
