@@ -1,7 +1,6 @@
 from tdc.single_pred import Tox
 import pandas as pd
 
-# Select a label from the label list you printed
 label_name = 'NR-AR'
 
 # Load the Tox21 dataset for the chosen assay

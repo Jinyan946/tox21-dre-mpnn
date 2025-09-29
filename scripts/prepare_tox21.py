@@ -167,7 +167,6 @@ def main():
 
     _ensure_dir(args.outdir)
 
-    # If user provided CSVs, use them; else try to load from libraries
     paths = {}
     if args.csv_train and args.csv_valid and args.csv_test:
         for key, p in [("train",args.csv_train),("valid",args.csv_valid),("test",args.csv_test)]:

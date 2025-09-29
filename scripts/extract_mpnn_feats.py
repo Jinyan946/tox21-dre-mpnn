@@ -4,10 +4,10 @@ from pathlib import Path
 from chemprop import data, featurizers, models
 
 # paths
-csv_path = "data/tox21_binary.csv"           # your SMILES+label CSV
+csv_path = "data/tox21_binary.csv"           
 smiles_col = "smiles"
 label_col = "label"
-checkpoint_path = Path("ckpt_tox21_nr_ar/fold_0/model_0/model.pt")  # <-- adjust to your file
+checkpoint_path = Path("ckpt_tox21_nr_ar/fold_0/model_0/model.pt")  
 
 # load chemprop MPNN
 mpnn = models.MPNN.load_from_checkpoint(checkpoint_path)
