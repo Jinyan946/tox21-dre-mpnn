@@ -1,13 +1,13 @@
 # tox21-dre-mpnn
 **Density-Ratio Estimation (DRE) for small molecules with Chemprop MPNN “graph fingerprints” (cached) and a lightweight PyTorch head.**
 
-> TL;DR: Replace 2048-bit Morgan bits with **Chemprop MPNN embeddings**, cache them to `.npz`, and train a **density-ratio** head (RatioMLP + logistic NCE). Includes scaffold splits, reproducible setup, and PCA visualization.
+> Replace 2048-bit Morgan bits with **Chemprop MPNN embeddings**, cache them to `.npz`, and train a **density-ratio** head (RatioMLP + logistic NCE).
 
 ---
 
 ## ✨ What’s in here
 - **Custom dataset pipeline (TDC/DeepChem):** Scaffold split (**80/10/10**, seed=42) → `train/valid/test.csv` with `smiles,label`.
-- **Graph fingerprints with Chemprop:** Build/c**ache MPNN embeddings** (`.npz`) from SMILES; **fallback** to Morgan if Chemprop isn’t available.
+- **Graph fingerprints with Chemprop:** Build/c**ache MPNN embeddings** (`.npz`) from SMILES.
 - **DRE head:** Small MLP (“RatioMLP”) trained with **logistic NCE** (BCE-with-logits) for density-ratio estimation \( \( \log \frac{p_A(x)}{p_B(x)} \) \).
 - **Viz:** Quick **PCA plot** of fingerprints/embeddings for sanity checking.
 
@@ -26,12 +26,12 @@ conda activate chemprop311
 conda install -c conda-forge rdkit -y
 pip install torch torchvision torchaudio
 
-# Chemprop v2 (GitHub; PyPI v1 lacks 'featurizers')
+# Chemprop v2 
 pip install "git+https://github.com/chemprop/chemprop.git"
 
 # Fallback (only if TDC loader doesn't work on your machine)
 pip install "deepchem>=2.8.0"
 
-# (Optional) project extras
+# project extras
 pip install numpy pandas matplotlib scikit-learn
 
