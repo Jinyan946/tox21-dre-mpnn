@@ -82,7 +82,7 @@ Detected input dimension: <D>  (feature type: MPNN|Morgan)
 
 ## 👀 Visualize fingerprints
 ```bash
-python scripts/viz_fingerprints.py
+python scripts/fingerprint_visual.py
 ```
 Outputs:
 
